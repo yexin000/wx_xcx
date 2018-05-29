@@ -17,6 +17,9 @@ Page({
     })
   },
   onLoad: function () {
+    this.setData({
+      mainViewUrl: ''
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -46,8 +49,9 @@ Page({
           success: function (result) {
             if(result) {
               var userObj = JSON.parse(result.data.userInfo);
+              var timestamp = new Date().getTime();
               that.setData({
-                mainViewUrl: app.globalData.indexUrl + "?openId=" + userObj.openId
+                mainViewUrl: app.globalData.indexUrl + "?openId=" + userObj.openId + "&time=" + timestamp
               })
             }
           }

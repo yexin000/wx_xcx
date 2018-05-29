@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登陆 </button>
+  <image src="../image/login-image.png" class="loginLogo"></image>
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class="loginbtn" bindgetuserinfo="getUserInfo">微信授权登陆</button>
   <block wx:else>
   <view class="userinfo">
       <web-view src="{{mainViewUrl}}"></web-view>

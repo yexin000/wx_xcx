@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/wxpay/wxpay"
+    "pages/wxpay/wxpay",
+    "pages/service/contactService",
+    "pages/bid/bid",
+    "pages/wxpay/wxpayRec"
   ],
   "window":{
     "backgroundTextStyle":"light",

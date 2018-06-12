@@ -1,0 +1,10 @@
+<view class="container">
+    <image src='/pages/image/success.png' class="smallicon"></image>
+    <text class="resultlabel">操作成功</text>
+    <form name='pushMsgFm' report-submit bindsubmit='pushMsg'>  
+      <input hidden="true" type="text" name="bidMoney" value='{{bidMoney}}'/>  
+      <input hidden="true" type="text" name='itemName' value='{{itemName}}'/>  
+      <input hidden="true" type="text" name='beOveredUser' value='{{beOveredUser}}'/>  
+      <button form-type="submit" class="loginbtn" >返回竞拍</button>  
+  </form>  
+</view>

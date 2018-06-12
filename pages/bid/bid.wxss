@@ -1,0 +1,20 @@
+/* pages/bid/bid.wxss */
+.loginbtn {
+  border:1rpx solid #0f8c69;
+  line-height:78rpx;
+  background-color:#0f8c69;
+  font-size:14px;
+  color:#fff;
+  letter-spacing:1px;
+  border-radius: 15px
+}
+
+.smallicon {
+  width: 100px;
+  height: 100px;
+}
+
+.resultlabel {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

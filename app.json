@@ -5,7 +5,8 @@
     "pages/wxpay/wxpay",
     "pages/service/contactService",
     "pages/bid/bid",
-    "pages/wxpay/wxpayRec"
+    "pages/wxpay/wxpayRec",
+	"pages/wxpay/wxpayPurchase"
   ],
   "window":{
     "backgroundTextStyle":"light",

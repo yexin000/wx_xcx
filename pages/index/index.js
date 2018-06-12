@@ -50,6 +50,7 @@ Page({
             if(result) {
               var userObj = JSON.parse(result.data.userInfo);
               var timestamp = new Date().getTime();
+              app.globalData.openId = userObj.openId;
               that.setData({
                 mainViewUrl: app.globalData.indexUrl + "?openId=" + userObj.openId + "&time=" + timestamp
               })

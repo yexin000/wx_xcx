@@ -29,8 +29,9 @@ Page({
     var bidMoney = e.detail.value.bidMoney;
     var itemName = encodeURIComponent(e.detail.value.itemName);
     var beOveredUser = e.detail.value.beOveredUser;
+    var openId = app.globalData.openId;
 
-    if (null != beOveredUser && beOveredUser != '') {
+    if (null != openId && openId != '') {
       var msgUrl = app.globalData.portUrl + "templateMsg/bidOverTemplateMsg.do";
       var that = this;
       wx.request({
@@ -39,7 +40,8 @@ Page({
           formId: fId,
           bidMoney: bidMoney,
           itemName: itemName,
-          beOveredUser: beOveredUser
+          beOveredUser: beOveredUser,
+          wxid: openId
         },
         header: {
           'content-type': 'application/x-www-form-urlencoded;charset=utf-8',

@@ -11,6 +11,7 @@ App({
   globalData: {
     userInfo: null,
     thirdSession: '',
+    openId: '',
     portUrl: 'https://mlhdkj.com/weixin/',
     indexUrl:'https://mlhdkj.com/weixin/foreground/html/lh/index.html'
   },

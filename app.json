@@ -1,17 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/wxpay/wxpay",
     "pages/service/contactService",
     "pages/bid/bid",
     "pages/wxpay/wxpayRec",
-	"pages/wxpay/wxpayPurchase"
+    "pages/wxpay/wxpayPurchase",
+    "pages/share/shareItem"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "百姓收藏",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

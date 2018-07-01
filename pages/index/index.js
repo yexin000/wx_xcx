@@ -16,11 +16,38 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    var itemId = options.scene;
+    if (itemId != null && itemId != '' && itemId.indexOf("ITEMID_") >=0 ) {
+      itemId = itemId.replace("ITEMID_", "");
+    } else {
+      itemId = '';
+    }
     this.setData({
-      mainViewUrl: ''
+      mainViewUrl: '',
+      itemId: itemId
     })
-    if (app.globalData.userInfo) {
+    if (app.globalData.openId != null && app.globalData.openId != '') {
+      var timestamp = new Date().getTime();
+      var indexPageUrl = app.globalData.indexUrl + "?openId=" + app.globalData.openId + "&time=" + timestamp;
+      if (itemId != '') {
+        indexPageUrl += "&itemId=" + itemId;
+      }
+      this.setData({
+        mainViewUrl: indexPageUrl,
+        hasUserInfo: true,
+        canIUse: wx.canIUse('button.open-type.getUserInfo')
+      })
+    } else if (app.globalData.userInfo) {
+      if (app.globalData.openId != null && app.globalData.openId != '') {
+        var indexPageUrl = app.globalData.indexUrl + "?openId=" + app.globalData.openId + "&time=" + timestamp;
+        if (itemId != '') {
+          indexPageUrl += "&itemId=" + itemId;
+        }
+        this.setData({
+          mainViewUrl: indexPageUrl
+        })
+      }
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -51,8 +78,12 @@ Page({
               var userObj = JSON.parse(result.data.userInfo);
               var timestamp = new Date().getTime();
               app.globalData.openId = userObj.openId;
+              var indexPageUrl = app.globalData.indexUrl + "?openId=" + userObj.openId + "&time=" + timestamp;
+              if(itemId != '') {
+                indexPageUrl += "&itemId=" + itemId;
+              }
               that.setData({
-                mainViewUrl: app.globalData.indexUrl + "?openId=" + userObj.openId + "&time=" + timestamp
+                mainViewUrl: indexPageUrl
               })
             }
           }
@@ -70,6 +101,11 @@ Page({
         }
       })
     }
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function (options) {
   },
   getUserInfo: function(e) {
     console.log(e)

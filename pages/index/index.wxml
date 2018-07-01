@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <image src="../image/login-image.png" class="loginLogo"></image>
+  <image src="../image/login-img.jpg" class="loginLogo"></image>
+  <text class="login-text">为了更好的体验，此应用需要获取您的昵称、头像等信息授权</text>
   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class="loginbtn" bindgetuserinfo="getUserInfo">微信授权登陆</button>
   <block wx:else>
   <view class="userinfo">

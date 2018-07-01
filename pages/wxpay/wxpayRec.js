@@ -1,3 +1,5 @@
+//获取应用实例
+const app = getApp();
 Page({
 
   /** 
@@ -23,6 +25,7 @@ Page({
     var nonceStr = obj.nonceStr;
     var prepay_id = obj.prepay_id;
     var paySign = obj.paySign;
+    var amount = obj.amount;
     //调起微信支付    
     wx.requestPayment({
       //相关支付参数    
@@ -48,7 +51,28 @@ Page({
             prevPage.setData({
               mainViewUrl: "https://mlhdkj.com/weixin/foreground/html/lh/paySuccess.html"
             })
-            wx.navigateBack();
+
+            //发送支付成功模板消息
+            var openId = app.globalData.openId;
+            if (null != openId && openId != '') {
+              var msgUrl = app.globalData.portUrl + "templateMsg/rechargeTemplateMsg.do";
+              wx.request({
+                url: msgUrl,
+                data: {
+                  formId: prepay_id,
+                  rechargeNum: amount,
+                  wxid: openId
+                },
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                },
+                success: function (result) {
+                },
+                complete: function (result) {
+                  wx.navigateBack();
+                }
+              })
+            }
           }
         });
       },

@@ -8,3 +8,15 @@
   letter-spacing:1px;
   border-radius: 15px
 }
+
+.loginLogo {
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 60rpx;
+}
+
+.serviceCode {
+  width: 240rpx;
+  height: 240rpx;
+  margin-top: 60rpx;
+}

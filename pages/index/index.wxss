@@ -22,17 +22,26 @@
 
 .loginbtn {
   width:70%;
-  border:1rpx solid #0f8c69;
+  border:1rpx solid #1baa19;
   line-height:78rpx;
-  background-color:#0f8c69;
+  background-color:#1baa19;
   font-size:14px;
   color:#fff;
   letter-spacing:1px;
-  border-radius: 15px
+  border-radius: 5px;
+  margin-top: 60rpx;
 }
 
 .loginLogo {
-  width: 70%;
+  width: 300rpx;
+  height: 300rpx;
   margin-bottom: 60rpx;
 }
 
+.login-text {
+  font-size: 13px;
+  color: #b2b2b7;
+  text-align: center;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+}

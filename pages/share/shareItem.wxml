@@ -1,0 +1,8 @@
+<!--pages/share/shareItem.wxml-->
+<view class="share_container">
+    <canvas canvas-id="shareCanvas" class="share_canvas"></canvas> 
+    <form name='pushMsgFm' report-submit bindsubmit='pushMsg'>  
+      <input hidden="true" type="text" name="itemId" value='0'/>
+      <button form-type="submit" class="loginbtn" >保存到相册</button>  
+  </form>
+</view>

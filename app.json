@@ -6,6 +6,7 @@
     "pages/service/contactService",
     "pages/bid/bid",
     "pages/wxpay/wxpayRec",
+    "pages/wxpay/wxpayActivity",
     "pages/wxpay/wxpayPurchase",
     "pages/share/shareItem"
   ],
